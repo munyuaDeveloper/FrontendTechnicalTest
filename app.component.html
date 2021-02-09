@@ -1,0 +1,26 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 ml-5 mt-5">
+      <div class="mb-5">
+        <button routerLink="/payment" class="btn btn-large btn-primary">Credit Card Payment</button>
+      </div>
+      <div class="card card-large">
+        State:
+          <pre>
+            {{ creditCard$ | async | json }}
+          </pre>
+
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="view-container">
+        <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
+
+        <router-outlet></router-outlet>
+
+        <div ng-view class="view-frame"></div>
+      </div>
+    </div>
+  </div>
+</div>
